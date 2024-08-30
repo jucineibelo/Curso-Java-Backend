@@ -1,6 +1,7 @@
 package com.example.demo.repository;
 
 import com.example.demo.entity.Produto;
+import com.example.demo.exception.ResourceNotFoundException;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
@@ -59,7 +60,7 @@ public class ProdutoRepository {
         Optional<Produto> encontrarProduto = getProdutoById(produto.getId());
 
         if (encontrarProduto.isEmpty()){
-            throw new InputMismatchException("Produto não encontrado");
+            throw new ResourceNotFoundException("Produto não encontrado");
         }
 
         produtos.add(produto);
