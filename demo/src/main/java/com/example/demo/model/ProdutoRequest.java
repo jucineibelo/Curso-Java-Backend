@@ -1,18 +1,20 @@
-package com.example.demo.entity;
+package com.example.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.util.UUID;
 
 @Entity
-public class Produto {
+@Table(name = "tb_produto")
+public class ProdutoRequest {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(name = "id", updatable = false, nullable = false)
     private UUID id;
+
     private String nome;
     private Integer quantidade;
     private Double valor;
@@ -22,7 +24,7 @@ public class Produto {
         return id;
     }
 
-    public Produto setId(UUID id) {
+    public ProdutoRequest setId(UUID id) {
         this.id = id;
         return this;
     }

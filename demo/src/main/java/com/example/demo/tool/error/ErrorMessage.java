@@ -1,4 +1,4 @@
-package com.example.demo.error;
+package com.example.demo.tool.error;
 
 public class ErrorMessage {
 
