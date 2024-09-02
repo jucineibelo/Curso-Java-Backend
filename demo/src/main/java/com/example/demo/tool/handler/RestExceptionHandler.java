@@ -1,7 +1,7 @@
-package com.example.demo.handler;
+package com.example.demo.tool.handler;
 
-import com.example.demo.error.ErrorMessage;
-import com.example.demo.exception.ResourceNotFoundException;
+import com.example.demo.tool.error.ErrorMessage;
+import com.example.demo.tool.exception.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
